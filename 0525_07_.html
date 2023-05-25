@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        
+        let myArr = [50,100,300,20,300,55,100,200,33];
+
+        let sum = 0;
+        for (let i = 0; i < myArr.length; i++) {            
+            sum +=myArr[i];           
+        }
+
+        document.write(`for loop 營業額為 : ${sum}<br>`);
+
+        sum = 0;
+        myArr.forEach(function(value,key){
+            sum = sum + value;
+            // console.log(sum);
+            // console.log(value);
+            // console.log(key);
+        })
+
+        
+        document.write(`forEach營業額為 : ${sum}<br>`);
+        
+        let sum100 = 0 ;
+        let sum99 = 0 ;
+        for (let i = 0; i < myArr.length; i++) {
+            if(myArr[i]<100){
+                sum99 += myArr[i];               
+                continue;                
+            }
+            sum100 +=myArr[i];           
+        }
+        let sumAll = sum100 + sum99 ;
+        document.write(`sum99小於100的營業額為 : ${sum99}<br>`)
+        document.write(`sum100大於等於100的營業額為 : ${sum100}<br>`)
+        document.write(`sumAll營業額為 : ${sumAll}<br>`)
+
+        for (let i = 0; i < myArr.length; i++) {
+            if(myArr[i] == 300){
+                document.write(`第一筆300的index = ${i}<br>`);
+                break;  
+            }                  
+        }
+
+    </script>
+</body>
+</html>

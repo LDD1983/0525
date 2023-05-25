@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // forEach.......
+        let myArr = [50,100,300,20,300,55,100,200,33];  
+        let cat = 0 ;
+        myArr.forEach(function(amy,bob){
+            console.log(`key => value, ${bob} => ${amy}`);
+            cat += amy;
+        });       
+        console.log('sumAll = ',cat);
+        cat = 0 ;
+        myArr.forEach(element => {
+            cat+=element;            
+        });
+       console.log('element',cat);
+       let dog = 0;
+       myArr.forEach(element => {
+        if(element>=100){
+            dog+=element;
+        }
+       });
+       console.log(dog);
+       let eat = 0;
+       myArr.forEach(element => {
+        if(element>100){
+            eat +=element;
+        }
+       });
+       console.log(eat);
+    </script>
+</body>
+</html>

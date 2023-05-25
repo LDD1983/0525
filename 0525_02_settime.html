@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- setTimeout -->
+
+    <button type="button" id="myBtn">myBtn</button>
+    <p id="result">origin</p>
+    <button type="menu" onclick="test()" id="test">印章</button>
+
+    <script>
+        function test(){
+            console.log('印章 ok');
+        };
+
+        const myBtn = document.getElementById('myBtn');
+        const test = document.getElementById('test');
+        const result = document.getElementById('result');
+
+        myBtn.addEventListener('click',function(){
+            // console.log('btn ok ');
+            // result.innerText = 'ok';
+            // setTimeout (function,秒數)
+            // 1000 == 1秒
+            console.log('三秒文字change');
+            setTimeout(function(){
+                // alert ('hello');
+                result.innerText = 'setTimeout okokok'
+            },3000)
+        })
+
+    </script>
+</body>
+</html>

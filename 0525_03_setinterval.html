@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button,
+        p {
+            width: 200px;
+        }
+        p{
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="myBtn">Start</button>
+    <button type="button" id="add">add</button>
+    <p id="result">Lorem</p>
+    <button type="button" id="myStop">Stop</button>
+
+
+    <script>
+        // 提前宣告 預防生命週期結束在function裡面
+        // Interval >>> 間隔
+        // 不宣告型式的意義在於避免之後閱讀誤解
+        let Intervalset;
+        // 參考點 
+        // 起始標記
+        let isStartFlag = false;
+
+        function myTimerStart() {
+            // 判斷起始標記
+            if (isStartFlag == true) {              
+                return false;
+                console.log('startflag false');              
+            }
+            console.log('myTimerStart ok');
+            Intervalset = setInterval(function () {
+                time = time + 1;
+                result.innerText = time
+            }, 1000);
+            // 起始標記
+            isStartFlag = true;
+            console.log('startflag true');
+        };
+
+
+
+
+        const myBtn = document.getElementById('myBtn');
+        const result = document.getElementById('result');
+        const myStop = document.getElementById('myStop');
+        const add = document.getElementById('add');
+        let time = 0;
+
+
+        add.addEventListener('click',function(){
+            if(!isStartFlag){
+                isStartFlag = ture ;
+            }
+        })
+        myBtn.addEventListener('click', function () {
+            console.log('click ok');
+            myTimerStart()
+        })
+
+        myStop.addEventListener('click', function () {
+            console.log('stop ok');
+            clearInterval(Intervalset);
+
+            isStartFlag = false;
+            console.log('flag false');
+        })
+    </script>
+
+
+
+</body>
+
+</html>
